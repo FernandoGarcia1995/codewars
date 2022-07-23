@@ -22,6 +22,9 @@ public class Snail {
 		int i, k = 0, l = 0;
 		int m = array.length;
 		int n = array[0].length;
+		int size = m * n;
+		int output[] =new int[size];
+		int counter = 0;
 
 		/*
 		 * k - starting row index m - ending row index l - starting column index n -
@@ -30,21 +33,24 @@ public class Snail {
 		while (k < m && l < n) {
 			// Print the first row from the remaining rows
 			for (i = l; i < n; ++i) {
-				System.out.print(array[k][i] + " ");
+				output[counter] = array[k][i];
+				counter++;
 			}
 			k++;
 
 			// Print the last column from the remaining
 			// columns
 			for (i = k; i < m; ++i) {
-				System.out.print(array[i][n - 1] + " ");
+				output[counter] = array[i][n - 1];
+				counter++;
 			}
 			n--;
 
 			// Print the last row from the remaining rows */
 			if (k < m) {
 				for (i = n - 1; i >= l; --i) {
-					System.out.print(array[m - 1][i] + " ");
+					output[counter] = array[m-1][i];
+					counter++;
 				}
 				m--;
 			}
@@ -53,12 +59,13 @@ public class Snail {
 			// columns */
 			if (l < n) {
 				for (i = m - 1; i >= k; --i) {
-					System.out.print(array[i][l] + " ");
+					output[counter] = array[i][l];
+					counter++;
 				}
 				l++;
 			}
 		}
 
-		return null;
+		return output;
 	}
 }
