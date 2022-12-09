@@ -22,7 +22,6 @@ public class DivSeven {
 	//Return on the stack number-of-steps, last-number-m-with-at-most-2-digits
 	
 	public static long[] seven(long m) {
-
 		boolean into = true;
 		long numberData = 0;
 		long lastDigit = 0;
